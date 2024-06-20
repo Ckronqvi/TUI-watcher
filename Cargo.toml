@@ -2,12 +2,23 @@
 name = "tui-watcher"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "A CLI tool to watch TUI prices and notify on changes."
+license = "MIT"
+repository = "https://github.com/Ckronqvi/TUI-watcher"
+authors = ["Nooa Kronqvist <nooa.kronqvist@hotmail.com>"]
 
 [dependencies]
+clap = { version = "4.5.7", features = ["derive"] }
+daemonize = "0.5.0"
+dotenv = "0.15.0"
+lettre = "0.11.7"
 reqwest = { version = "0.12.4", features = ["blocking"] }
 scraper = "0.19.0"
 serde = { version = "1.0.203", features = ["derive"] }
 serde_json = "1.0.117"
 tokio = { version = "1.38.0", features = ["full"] }
+
+[package.metadata.docs.rs]
+# Settings for documentation generation on docs.rs.
+targets = ["x86_64-unknown-linux-gnu", "x86_64-pc-windows-msvc"]
+
